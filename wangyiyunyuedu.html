@@ -1,0 +1,494 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+body{ margin:0px; padding:0px; font-size:14px; font-family: "微软雅黑 Light"; color:#5E5E5E}
+a:link,a:visited{color:#5E5E5E; text-decoration:none;}
+a:hover{ color:#c9483c}
+ul{ list-style:none; margin:0px; padding:0px;}
+img{ border:0px;}
+.content{ width:980px; margin:0 auto}
+.clear{ clear:both;}
+.top_bg{ border-bottom:1px solid #dcdcdc; background:#fafafa; font-size:12px;}
+.top {height:35px; line-height:35px; width:980px; margin:0 auto;}
+.top .top_left{ float:left;}
+.top .top_left li{ float:left;}
+.top .top_left li a{ position: relative; display: block; color: #888; font-size: 9pt; line-height: 35px; cursor: pointer;}
+.top .top_left li a:hover{ color: #c9483c;}
+
+.top .top_right{ float:right;}
+.top .top_right span{ margin:0 8px;}
+.head{ padding-top:40px; margin-bottom:28px;}
+.head .logo{ float:left}
+.head .logo a{ display:block; width:194px; height:36px; background:url(下载.png) no-repeat;}
+.head .serch{ float:left; padding-left:88px;}
+.head .serch input{ float:left;}
+.head .serch .serch_text{ width:336px; height:34px; border:1px solid #c9483c; padding:0 10px; line-height:34px; color:#808080; font-family:微软雅黑;}
+.head .serch .serch_btn{ width:42px; height:36px; background: url(下载.png) no-repeat  0 -57px #c9483c; border:0px;}
+.head .my{ float:right; }
+.head .my span{ float:left; height:35px; width:71px; border:1px solid #ebe6e1; line-height:35px; text-align:center; padding-left:30px; cursor:pointer; display:block;}
+.head .my span.bg1{ background:url(下载.png) no-repeat 10px -121px; border-right:0px;}
+.head .my span.bg2{ background:url(下载.png) no-repeat 10px -175px;}
+.head .my span:hover{ color:#c9483c; background-color:#efefef;}
+.menu{ position:relative; height:42px;}
+.menu .line{
+	border-bottom: 2px solid #000000;
+	position: absolute;
+	left:  0px;
+	right: 0px; line-height:0px;  height:0px;
+	top: 40px; z-index:-1
+}
+.menu ul li{ float:left; padding:10px 20px; font-size:16px; font-weight:bold; cursor:pointer; height:20px; line-height:20px;}
+.menu ul li.red{ color:#c9483c; border-bottom:2px solid #c9483c}
+.menu ul li.kh_ico{ background:url(下载.png) no-repeat 20px -242px; padding-left:40px;}
+.menu ul li:hover{ color:#c9483c;border-bottom:2px solid #c9483c}
+.menu ul li a:link,.menu ul li a:visited{color:#5E5E5E; text-decoration:none;}
+.menu ul li a:hover{color:#5E5E5E;}
+.menu ul li.red a:link,.menu ul li.red a:visited,.menu ul li.red a:hover{color:#c9483c}
+.nav{ width:236px; border:2px solid #e0dcd7;float:left; margin:20px 20px 0px 0px}
+.banner_img{ float:left; margin-top:20px; position: relative; width: 720px; height: 380px;}
+.banner_img:hover .btn1,.banner_img:hover .btn2{ display: block;}
+.banner_img ul li{opacity: 0; transition: opacity .5s; position: absolute; top: 0;left: 0;}
+.banner_img ul li.bl{opacity: 1; transition: .5s;}
+.btn3{position: absolute; right: 20px; width: 200px; float: right; bottom: 20px;z-index: 2;font-size: 12px; color: #666; }
+.btn3 a{display: block; width: 8px; height: 8px; margin: 0 5px; border-radius: 10px; background: #fff; overflow: hidden; transition: all .2s;float: left; cursor: pointer;}
+.btn3 a.red{background: red;}
+.btn1{position: absolute; left: 16px; top: 50%; z-index: 99; width: 37px; height: 63px;margin-top: -35px; background: url(images/下载.png) no-repeat 0 0; cursor: pointer; display: none;}
+.btn2{position: absolute; right: 16px; top: 50%; z-index: 99; width: 37px; height: 63px;margin-top: -35px; background: url(images/下载.png) no-repeat 0 -126px; cursor: pointer; display: none;}
+.btn1:hover{background: url(images/下载.png) no-repeat 0 -63px;}
+.btn2:hover{background: url(images/下载.png) no-repeat 0 -189px;}
+.nav ul li{ padding:10px 20px; font-size:12px; line-height:24px; position:relative; border-bottom:1px solid #e0dcd7; z-index: 999;}
+.nav ul li.no_line{ border:0px;}
+.nav ul li .more{
+	position: absolute;
+	left: 201px;
+	top: 15px;
+	background: url(12.png) 10px -170px;
+	width: 20px;
+	height: 20px;
+}
+.nav ul li h3{ margin:0px; padding:0px; font-size:16px; line-height:26px;}
+.nav ul li span{ padding:0 11px; color:#A3A3A3;}
+.nav ul li .z_nav{
+	display:none;
+	width: 200px;
+	position: absolute;
+	padding: 10px 20px;
+	background: #fff;
+	padding-top:36px;
+	border: 2px solid #e0dcd7;
+	border-left: 0px;
+	left: 236px;
+	top: -2px;
+}
+.nav ul li:hover .z_nav{ display:block}
+.nav ul li:hover .more{ display:none;}
+.title { padding-top:40px; padding-bottom:15px;}
+.title a{ padding:0 10px;}
+.title a.red{ margin-left: 20px;}
+.title .h_title{ font-size:18px; padding-left:0px;color: #000;font-weight: bold }
+
+
+.book{ border:1px solid #ebe6e1;  zoom:1;}
+.book ul li{ width:285px; float:left; border-right:1px solid #ebe6e1 ; padding:20px; font-size:12px; line-height:20px; position:relative }
+.book ul li:hover{ background:#efefef}
+.book ul li a.img{ float:left; margin-right:20px;}
+.book ul li a.img img{ width:114px; height:160px;}
+.book ul li h1{ font-size:16px;padding:0px; margin:0px; line-height:26px; }
+.book ul li p{ padding:0px; margin:0px; line-height:26px;}
+.book ul li p.form{ padding-bottom:3px;}
+.book ul li .text{ color:#808080; max-height:80px; overflow:hidden;}
+.book ul li .read{
+	position: absolute;
+	left: 157px;
+	bottom: 20px; font-weight:bold;
+}
+.book ul li.noline{border-right:0px; width:286px;}
+.book ul li.w308{ width:308px;}
+.book ul li.b_line{ border-bottom:1px solid #ebe6e1 }
+.book ul li.h320{ height:335px; position:relative;}
+.book ul li.padding0{ padding:0px; width:326px;}
+.book ul li.padding0:hover{ background:#FFFFFF}
+.title span.fl{ float:left; }
+.title span.fr{ float:right;padding-right:0px;}
+.woman_left{ float:left; margin-right:20px; width:699px;}
+.woman_right{ float:left; width:259px; }
+.li_book{border:1px solid #ebe6e1;}
+.li_book ul li{ border-bottom:1px solid #ebe6e1; padding:12px 10px; }
+.li_book ul li span.img{ float:left; margin-right:10px;}
+.li_book ul li span.img img{ width:74px; height:104px;}
+.li_book ul li span.num{ color:#8F8F8F; padding:0 20px 0 10px; float:left}
+.li_book ul li span.red{ color:#c9483c}
+	
+.li_book ul li span.b_title{ font-size:16px; font-weight:bold;}
+.li_book ul li span.b_name{ font-size:12px; color:#838383; line-height:30px;}
+.li_book ul li span.jt{ background:url(images/sprite.png) no-repeat; height:10px; width:15px; float:left; margin-left:10px; margin-right:20px; margin-top:5px;}
+.li_book ul li.pa15{ padding:16px 10px;}
+.li_book ul li.pa15:hover{ background:#efefef}
+.bottom10{ margin-bottom:15px;}
+
+.b_num{
+	position: absolute;
+	top: 322px;
+}
+.b_num a{ float:left; height:13px; padding:10px 10px 10px 0px; color:#949494; line-height:13px;}
+.b_num a span.bg1{ float:left;padding-left:15px; height:13px; background:url(images/sprite.png) no-repeat 0 -12px;}
+.b_num a span.bg2{ float:left;padding-left:15px; height:13px; background:url(images/sprite.png) no-repeat -15px -10px;}
+.li_news{ }
+.li_news ul li{ border:0px;border-bottom:1px solid #ebe6e1; padding:16px 20px; font-size:14px; width:286px;}
+.li_news ul li a{ display:block; border-left:2px solid #C50003; padding-left:5px; height:14px; line-height:14px; margin-bottom:8px;}
+.li_news ul li span{ padding-left:8px; color:#727272}
+.li_news ul li.b0{ border-bottom:0px;}
+
+.foot{ text-align:center; padding:20px 0px; font-size:12px; line-height:25px; padding:40px 0px; background:#fafafa; border-top:1px solid #eee; margin-top:40px;}
+.foot span{ padding:0 10px;}
+.foot .fx{ width:150px; margin:0 auto;}
+.foot .fx a{padding:0px 8px; line-height:20px; margin-right:5px; float:left; height:20px;}
+.foot .fx a.bg1{ background:url(images/sprite2.png) no-repeat 1px -38px;}
+.foot .fx a.bg1:hover{ background:url(images/sprite2.png) no-repeat 1px -58px;}
+.foot .fx a.bg2{ background:url(images/sprite2.png) no-repeat -16px -38px;}
+.foot .fx a.bg2:hover{ background:url(images/sprite2.png) no-repeat -16px -57px;}
+.foot .fx a.bg3{ background:url(images/sprite2.png) no-repeat -33px -38px;}
+.foot .fx a.bg3:hover{ background:url(images/sprite2.png) no-repeat -33px -57px;}
+	.right{float: right}
+	.kh_ico1{ background:url(11.png) no-repeat left center;}
+.kh_ico2{ background:url( 22.png) no-repeat left center;}
+	.top_left a{margin: 0 10px;}
+	.login{float: left}
+	.login img{padding-left: 15px;}
+
+</style>
+<title> </title>
+</head>
+
+<body>
+<div class="top_bg">
+<div class="top">
+	<div >
+		<ul class="top_left">
+ 			<li><a>网易云阅读</a></li>
+ 			<li><span class="sep">|</span></li>
+ 			<li><a>国风中文网</a></li>
+ 			<li><span class="sep">|</span></li>
+ 			<li><a>采薇书院</a></li>
+ 			<li><span class="sep">|</span></li>
+ 			<li><a>从电脑上导入书籍</a></li>
+ 			<li><span class="sep">|</span></li>
+ 			<li><a>公众号</a></li>
+ 			<li><span class="sep">|</span></li>
+ 			<li><a>渠道推广平台</a></li>
+		</ul>
+	</div>
+
+<div class="top_right">
+	<span>
+	<div class="login"><a  href="#">登录<img src="images/23_03.jpg" width="6" height="4" alt=""/></a>
+	</div></span> |<span>
+	<a href="#">注册</a></span> | <span>
+	<a href="#">举报</a></span></div>
+</div>
+</div>
+
+<div class="content">
+
+<div class="head">
+<div class="logo"><a href="#"></a></div>
+<div class="serch"><input type="text" class="serch_text" value="北京，北京" /><input class="serch_btn" type="button" value=" " /></div>
+<div class="my"><span class="bg1">我的订阅</span><span class="bg2">我的书架</span></div>
+<div class="clear"></div>
+</div>
+
+<div class="menu">
+<ul><li class="red"><a href="#">首页</a></li>
+<li><a href="#">出版图书</a></li>
+<li><a href="#">国风中文网</a></li>
+<li><a href="#">采薇书院</a></li>
+<li><a href="#">漫画</a></li>
+<li><a href="#">订阅</a></li>
+<li><a href="#">排行榜</a></li>
+</ul>
+<ul class="right">
+	<li class="kh_ico1"><a href="#">作者中心</a></li>
+	<li class="kh_ico2"><a href="#">充值</a></li>
+	<li class="kh_ico"><a href="#">客户端</a></li>
+	</ul>
+<div class="line"></div>
+	
+<div class="clear"></div>
+</div>
+
+<div class="banner">
+<div class="nav">
+<ul>
+  <li>
+    <h3>国风中文网</h3>
+    <div class="more"></div>
+    <a style="color: #c9483c" href="#">都市生活</a><span>|</span><a style="color: #c9483c" href="#">官场职场</a><span>|</span><a href="#">玄幻仙侠</a> <a href="#">悬疑探险</a><span>|</span><a href="#">灵异恐怖</a><span>|</span><a href="#">短篇小说</a>
+   <div class="z_nav">
+ <a href="#">科幻奇幻</a><span>|</span><a href="#">军事谍战</a><span>|</span><a href="#">同人网游</a> <a href="#">历史传奇</a></div>
+  </li>
+  <li><h3>采薇书院</h3><div class="more"></div>
+  <a href="#">浪漫青春</a><span>|</span><a style="color: #c9483c" href="#">都市言情</a><span>|</span><a href="#">古风古韵</a> <a href="#">穿越架空</a><span>|</span><a style="color: #c9483c" href="#">宫斗宅斗</a><span>|</span><a href="#">种田重生</a>
+<div class="z_nav">
+ <a href="#"> 短篇美文</a><span>|</span><a href="#">仙侠幻情</a><span>|</span><a href="#">灵异推理</a> <a href="#">同人网游</a></div>
+</li>
+
+<li><h3>图书</h3><div class="more"></div>
+ <a style="color: #c9483c" href="#">流行小说</a><span>|</span><a style="color: #c9483c" href="#">社科历史</a><span>|</span><a href="#">杂志期刊</a> <a href="#">经济管理</a><span>|</span><a href="#">文学艺术</a><span>|</span><a href="#">生活保健</a>
+<div class="z_nav">
+ <a href="#"> 两性情感</a><span>|</span><a href="#">成功励志</a><span>|</span><a href="#">亲子少儿</a> <a href="#">影像画册</a><span>|</span><a href="#">经典名著</a><span>|</span><a href="#">外文外版</a></div>
+</li>
+
+<li class="no_line"><h3>订阅</h3><div class="more"></div>
+ <a href="#">创意频道</a><span>|</span><a href="#">美食频道</a><span>|</span><a href="#">公开课堂</a> <a href="#">视觉频道</a><span>|</span><a href="#">外文频道</a><span>|</span><a href="#">自媒体人</a>
+<div class="z_nav">
+ <a href="#"> 两性情感</a><span>|</span><a href="#">成功励志</a><span>|</span><a href="#">亲子少儿</a> <a href="#">影像画册</a><span>|</span><a href="#">经典名著</a><span>|</span><a href="#">外文外版</a></div>
+</li>
+
+</ul>
+</div>
+<div class="banner_img" id="box">
+	<ul id="pic">
+		<li><img src="201707211136511235a.jpg"  alt=""/></li>
+		<li><img src="images/2017081013483498514.jpg"  alt=""/></li>
+		<li><img src="images/20170814172139aacf5.jpg"  alt=""/></li>
+		<li><img src="images/20170818210958e670f.jpg"  alt=""/></li>
+	</ul>
+	<div>
+		<a class="btn1" id="left"></a>
+		<a class="btn2" id="right"></a>
+	</div>
+	<div class="btn3" id="btn3">
+		<a></a>
+		<a></a>
+		<a></a>
+		<a></a>
+	</div>
+</div>
+<script>
+	var List=document.getElementById("pic").getElementsByTagName("li")
+			var Btn=document.getElementById("btn3").getElementsByTagName("a")
+			var Left=document.getElementById("left")
+			var Right=document.getElementById("right")
+			var box=document.getElementById("box")
+			var i=0,f=0
+			List[i].className="bl"
+			Btn[f].className="red"
+			while(f<Btn.length){
+				Btn[f].index=f
+				Btn[f].onclick=function(){
+					i=this.index              //点击的时候修改i，并且传到下面的方法
+					var f=0
+					while(f<Btn.length){
+						Btn[f].className=""
+						List[f].className=""	
+						f++
+					}
+					this.className="red"
+					List[this.index].className="bl"				
+				}
+				f++
+			}
+			
+			function play(){
+				var e=i
+				i<List.length-1?i++:i=0
+				List[e].className=""
+				List[i].className="bl"
+				Btn[e].className=""
+				Btn[i].className="red"
+			}
+
+			Right.onclick=play
+			Left.onclick=function(){
+				var e=i
+				i>0?i--:i=List.length-1
+	            List[e].className=""
+				List[i].className="bl"				
+				Btn[e].className=""
+				Btn[i].className="red"
+			}
+			
+			var time=setInterval(play,2000)
+			box.onmousemove=function(){
+				clearInterval(time)
+			}
+			box.onmouseout=function(){
+				time=setInterval(play,2000)
+			}
+</script>
+<div class="clear"></div>
+</div>
+
+<div class="title"><span class="h_title">主编推荐</span>
+<a class="red">图书</a>|<a>小说</a>|<a>订阅</a></div>
+<div class="book">
+	<ul>
+		<li>
+			<a class="img" href="#"><img src="8796093023472815286.jpg" width="440" height="620" alt=""/></a>
+  			<h1><a href="#" >罪恶调查局</a></h1>	
+			<p>骁骑校</p>
+			<div class="text">毛头小子，混血少女，混吃等死的老记者，这就是罪恶调查局的全部</div>
+			<div class="read"><a href="#">立即阅读</a></div>
+		</li>
+		<li>
+			<a class="img" href="#"><img src="8796093023312517165.jpg" width="440" height="620" alt=""/></a>
+  			<h1><a href="#">天才妖妃不好惹</a></h1>
+  			<p>七月悠然</p>
+  			<div class="text">她天生眼盲，双亲被害！苟活于世，竟沦为祭祀之品！一朝觉醒，强势回归！</div>
+ 			<div class="read"><a href="#">立即阅读&gt;</a></div>
+		</li>
+ 		<li class="noline">
+ 			<a class="img" href="#"><img src="8796093022217220656.jpg" width="440" height="620" alt=""/></a>
+    		<h1><a href="#">官梯</a></h1>
+    		<p>钓人的鱼</p>
+    		<div class="text">为官者，踏出一步，就是一个脚印，对了，那是份内之事，错了，前面就是万丈深渊；</div>
+    		<div class="read"><a href="#">立即阅读&gt;</a></div>
+  		</li>
+	</ul><div class="clear"></div>
+</div>
+
+<div class="woman_left">
+<div class="title"><span class="h_title fl">国风中文网</span>
+<span class="fr">更多</span><div class="clear"></div></div>
+<div class="book">
+<ul>
+<li class="w308 b_line"><a class="img" href="#"><img src="8796093023069541329.jpg" width="440" height="620" alt=""/></a>
+<h1><a href="#">大地产商</a></h1>
+<p>更俗</p>
+<div class="text">陈立机缘巧合，挽救了两家濒临倒闭的公司，也为自己撬开进入地产行业的大门。</div>
+<div class="read"><a href="#">立即阅读</a></div>
+</li>
+  <li class="noline w308 b_line"><a class="img" href="#"><img src="8796093023298325481.jpg" width="440" height="620" alt=""/></a>
+    <h1><a href="#">非常侦探</a></h1>
+    <p>磕巴</p>
+    <div class="text">"善良的阿舒救了一个横穿马路的怀孕女孩，从此就开始了噩梦一般的生活</div>
+    <div class="read"><a href="#">立即阅读&gt;</a></div>
+  </li>
+  <li class="w308"><a class="img" href="#"><img src="8796093022995057684.jpg" width="440" height="620" alt=""/></a>
+<h1><a href="#">奇门弄宝</a></h1>
+<p>醉听风吟</p>
+<div class="text">大学生秦奋，偶得奇门之术和阴阳透视眼传承。</div>
+<div class="read"><a href="#">立即阅读</a></div>
+</li>
+  <li class="noline w308"><a class="img" href="#"><img src="8796093022970062680.jpg" width="440" height="620" alt=""/></a>
+    <h1><a href="#">风流青云路</a></h1>
+    <p>老周小王</p>
+    <div class="text">苏星晖重生到了二十多年前，身为全县最偏僻落后的乡政府的普通办事员…</div>
+    <div class="read"><a href="#">立即阅读&gt;</a></div>
+  </li>
+</ul><div class="clear"></div>
+</div>
+</div>
+
+<div class="woman_right">
+<div class="title"><span class="h_title">国风中文网畅销榜</span></div>
+<div class="li_book">
+<ul>
+<li class="pa15"><span class="num red">01</span><span class="img"><img src="8796093022217220656.jpg" alt=""/></span><span class="b_title"><a href="#">官梯</a></span><br /><span class="b_name">钓人的鱼</span><div class="clear"></div></li>
+<li><span class="num">02</span><a href="#">超级特卫传奇</a></li>
+<li><span class="num">03</span><a href="#">青云记</a></li>
+<li><span class="num">04</span><a href="#">医武兵王</a></li>
+<li><span class="num">05</span><a href="#">妇科男医生官场笔记</a></li>
+<li><span class="num">06</span><a href="#">通天仕途</a></li>
+<li><a href="#">查看更多</a></li>
+</ul>
+</div>
+</div><div class="woman_left">
+<div class="title"><span class="h_title fl">采薇书院</span>
+<span class="fr">更多</span><div class="clear"></div></div>
+<div class="book">
+<ul>
+<li class="w308 b_line"><a class="img" href="#"><img src="8796093023393571970.jpg" width="440" height="620" alt=""/></a>
+<h1><a href="#">嫡女重生：步步为凰</a></h1>
+<p>霓裳佳人</p>
+<div class="text">前世的她被污为祸国毒妇抛尸荒野而死。一朝重生，斗姨娘庶妹，让负心汉生不如死。</div>
+<div class="read"><a href="#">立即阅读</a></div>
+</li>
+  <li class="noline w308 b_line"><a class="img" href="#"><img src="8796093022759402355.jpg" width="440" height="620" alt=""/></a>
+    <h1><a href="#">美人如玉：绝佳大小姐</a></h1>
+    <p>米倪儿</p>
+    <div class="text">她深爱的男人，对她不屑一顾，为别的女人肝肠寸断，另一个男人却对她一往情深。</div>
+    <div class="read"><a href="#">立即阅读&gt;</a></div>
+  </li>
+  <li class="w308"><a class="img" href="#"><img src="8796093023069550837.jpg" width="440" height="620" alt=""/></a>
+<h1><a href="#">情陷于诺，总裁的兼职太太 </a></h1>
+<p>柳乘风</p>
+<div class="text">女老板缺钱,大总裁缺爱，两人签下为期三个月的结婚协议，都报着谈钱不谈感情的信心。</div>
+<div class="read"><a href="#">立即阅读</a></div>
+</li>
+  <li class="noline w308"><a class="img" href="#"><img src="8796093023224013906.jpg" width="440" height="620" alt=""/></a>
+    <h1><a href="#">暖婚新妻，老公深深爱</a></h1>
+    <p>安暖暖</p>
+    <div class="text">他居然告她非礼！乔子悦对带了几十个保镖过来要她负责的男人，忽然觉得不想活了。</div>
+    <div class="read"><a href="#">立即阅读&gt;</a></div>
+  </li>
+</ul><div class="clear"></div>
+</div>
+</div>
+
+<div class="woman_right">
+<div class="title"><span class="h_title">采薇书院畅销榜</span></div>
+<div class="li_book">
+<ul>
+<li class="pa15"><span class="num red">01</span><span class="img"><img src="1.jpg" alt=""/></span><span class="b_title"><a href="#">飘洋过海来爱你：一撞成婚</a></span><br /><span class="b_name">凌沐</span><div class="clear"></div></li>
+<li><span class="num">02</span><a href="#">少帅大人，请高抬贵手</a></li>
+<li><span class="num">03</span><a href="#">爱你不是两三天</a></li>
+<li><span class="num">04</span><a href="#">愿得一人心</a></li>
+<li><span class="num">05</span><a href="#">宠妻无度：男神老公要抱抱</a></li>
+<li><span class="num">06</span><a href="#">闪婚神秘老公</a></li>
+<li><a href="#">查看更多</a></li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+
+
+
+<div class="title"><span class="h_title fl">热门文章</span>
+<span class="fr"><a href="#">更多</a></span>
+<div class="clear"></div></div>
+<div class="book">
+<ul>
+<li class="h320">
+<img class="bottom10" src="20170719140254de968.jpg" width="285" height="180" alt=""/>
+<h1><a href="#">张悦然：旧时的离别</a></h1>
+<p class="form">来源：美文日赏</p>
+<div class="text">那座老火车站适时地死去，变成记忆中的文物。</div>
+<div class="b_num"><a><span class="bg1"></span>444</a><a><span class="bg2"></span>332</a></div>
+</li>
+<li class="h320"> <img class="bottom10" src="20170719135247cb350.jpg" width="285" height="180" alt=""/>
+  <h1><a href="#">听爷爷的话</a></h1>
+  <p class="form">来源：人间</p>
+  <div class="text">他还是一样喜欢絮叨，一个人能自顾自地说上半天。</div>
+  <div class="b_num"><a><span class="bg1"></span>578</a><a><span class="bg2"></span>377</a></div>
+</li>
+<li class="noline padding0">
+  <div class="li_news">
+    <ul>
+      <li><a href="#" class="num">自白</a>
+          <span>我愿意把这人生的短梦做得生意盎然。</span></li>
+      <li><a href="#" class="num">所有艰难的时刻，都只属于你一个人</a>
+          <span>与其想着拉着全世界下水，不如一个人扑腾挣扎。</span></li>
+      <li><a href="#" class="num">写给女儿：自我保全是你的终生必修课</a>
+          <span>一位母亲给女儿的一封信。</span></li>
+      <li><a href="#" class="num">我好像在哪里见过你</a>
+          <span>一个人能有多不正经，就能有多深情。</span></li>
+      <li class="b0"><a href="#" class="num">遇见鲷鱼冰淇淋</a>
+          <span>好闺蜜，干一杯，不胖我不归。</span></li>
+    </ul>
+    <div class="clear"></div>
+  </div>
+</li>
+</ul><div class="clear"></div>
+</div>
+
+</div>
+
+<div class="foot"><div><a href="#">网易首页</a><span>|</span> <a href="#">公司简介</a><span>|</span><a href="#">客户服务</a><span>|</span> <a href="#">相关法律</a><span>|</span> <a href="#">网站导航</a><span>|</span> <a href="#">意见反馈</a><span>|</span> <a href="#">客服电话</a><span>|</span> <a href="#">帮助中心</a><span>|</span> <a href="#">作者中心</a></div>
+<div>网易公司版权所有©1997-2016</div>
+<div class="fx"><a>分享到：</a><a class="bg1"></a><a class="bg2"></a><a class="bg3"></a></div>
+</div>
+</body>
+</html>
